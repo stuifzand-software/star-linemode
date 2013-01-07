@@ -20,6 +20,12 @@ package Protocol::Star::Linemode::Generated;
 use strict;
 
 use parent "Protocol::Star::Linemode";
+sub command_initialization {
+    my ($self, ) = @_;
+    $self->append_pack("CC", 0x1B, 0x40, );
+    return;
+}
+
 sub select_font {
     my ($self, $arg0) = @_;
     $self->append_pack("CCCC", 0x1B, 0x1E, 0x46, $arg0);
@@ -98,13 +104,13 @@ sub cancel_double_high {
     return;
 }
 
-sub set_emphazied_printing {
+sub set_emphasized_printing {
     my ($self, ) = @_;
     $self->append_pack("CC", 0x1B, 0x45, );
     return;
 }
 
-sub cancel_emphazied_printing {
+sub cancel_emphasized_printing {
     my ($self, ) = @_;
     $self->append_pack("CC", 0x1B, 0x46, );
     return;
@@ -161,6 +167,18 @@ sub set_left_margin {
 sub set_right_margin {
     my ($self, $arg0) = @_;
     $self->append_pack("CCC", 0x1B, 0x51, $arg0);
+    return;
+}
+
+sub skip_lines {
+    my ($self, $arg0) = @_;
+    $self->append_pack("CCC", 0x1B, 0x61, $arg0);
+    return;
+}
+
+sub cut {
+    my ($self, ) = @_;
+    $self->append_pack("CCC", 0x1B, 0x64, 0x33, );
     return;
 }
 
@@ -233,6 +251,12 @@ sub lf {
 sub cr {
     my ($self, ) = @_;
     $self->append_pack("C", 0x13, );
+    return;
+}
+
+sub crlf {
+    my ($self, ) = @_;
+    $self->append_pack("CC", 0x13, 0x0A, );
     return;
 }
 
