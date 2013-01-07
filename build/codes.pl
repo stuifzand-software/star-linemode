@@ -61,7 +61,8 @@ my $tree = ${$r->value};
 my @rules;
 
 for my $top_rule (@{ $tree }) {
-    if ($top_rule->{type} eq 'prefix_block') {
+
+    if (ref($top_rule) eq 'HASH' && $top_rule->{type} eq 'prefix_block') {
         for my $rule (@{$top_rule->{rules}}) {
             push @rules, {
                 name  => $rule->{name},
@@ -70,8 +71,8 @@ for my $top_rule (@{ $tree }) {
             };
         }
     }
-    else {
-        push @rules, $top_rule;
+    elsif (ref($top_rule) eq 'ARRAY') {
+        push @rules, @$top_rule;
     }
 }
 
@@ -104,7 +105,7 @@ for my $rule (@rules) {
     my @code   = @{$rule->{bytes}};
 
     my $bytes = join ", ", @code;
-    my $args  = join ", ", (map { '$arg'.$_ } 0 .. ($nargs));
+    my $args  = join ", ", (map { '$arg'.$_ } 0 .. ($nargs-1));
 
     my $len         = $nargs + scalar @code;
     my $pack_format = 'C' x $len;
@@ -117,7 +118,6 @@ sub $name {
 }
 
 FUNC
-
 
 }
 
