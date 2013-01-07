@@ -50,12 +50,6 @@ sub specify_12_dot_pitch {
     return;
 }
 
-sub specify_12_dot_pitch {
-    my ($self, ) = @_;
-    $self->append_pack("CC", 0x1B, 0x4D, );
-    return;
-}
-
 sub specify_15_dot_pitch {
     my ($self, ) = @_;
     $self->append_pack("CC", 0x1B, 0x50, );
@@ -259,4 +253,6 @@ sub horizontal_tab {
     $self->append_pack("C", 0x09, );
     return;
 }
+
+1;
 
