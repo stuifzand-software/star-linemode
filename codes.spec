@@ -4,7 +4,6 @@ prefix 0x1B
     set_slash_zero                      1   0x27
     specify_international_charset       1   0x52
     specify_12_dot_pitch                0   0x4D
-    specify_12_dot_pitch                0   0x4D
     specify_15_dot_pitch                0   0x50
     specify_16_dot_pitch                0   0x3A
     specify_14_dot_pitch                0   0x67
