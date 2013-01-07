@@ -121,6 +121,8 @@ FUNC
 
 }
 
+print "1;\n\n";
+
 sub new {
     my $klass = shift;
     return bless {}, $klass;
