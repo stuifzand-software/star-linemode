@@ -77,8 +77,8 @@ for my $top_rule (@{ $tree }) {
 }
 
 print "# Generated file - do not modify\n";
-print "# Copyright (c) 2010-2013 Peter Stuifzand\n";
-print "# Copyright (c) 2010-2013 Other contributors as noted in the AUTHORS file\n";
+print "# Copyright (c) 2013 Peter Stuifzand\n";
+print "# Copyright (c) 2013 Other contributors as noted in the AUTHORS file\n";
 print "#\n";
 print "# Protocol::Star::Linemode::Generated is part of Protocol::Star::Linemode\n";
 print "#\n";

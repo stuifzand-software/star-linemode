@@ -1,6 +1,6 @@
 # Generated file - do not modify
-# Copyright (c) 2010-2013 Peter Stuifzand
-# Copyright (c) 2010-2013 Other contributors as noted in the AUTHORS file
+# Copyright (c) 2013 Peter Stuifzand
+# Copyright (c) 2013 Other contributors as noted in the AUTHORS file
 #
 # Protocol::Star::Linemode::Generated is part of Protocol::Star::Linemode
 #
