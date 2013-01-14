@@ -182,6 +182,18 @@ sub cut {
     return;
 }
 
+sub barcode_ean13 {
+    my ($self, $arg0) = @_;
+    $self->append_pack("CCCCCC", 0x1B, 0x62, 0x03, 0x02, 0x01, $arg0);
+    return;
+}
+
+sub barcode_code128 {
+    my ($self, $arg0) = @_;
+    $self->append_pack("CCCCCC", 0x1B, 0x62, 0x06, 0x02, 0x01, $arg0);
+    return;
+}
+
 sub move_absolute_position {
     my ($self, $arg0, $arg1) = @_;
     $self->append_pack("CCCCC", 0x1B, 0x1D, 0x41, $arg0, $arg1);
@@ -275,6 +287,18 @@ sub vertical_tab {
 sub horizontal_tab {
     my ($self, ) = @_;
     $self->append_pack("C", 0x09, );
+    return;
+}
+
+sub data_end {
+    my ($self, ) = @_;
+    $self->append_pack("C", 0x1E, );
+    return;
+}
+
+sub bell {
+    my ($self, ) = @_;
+    $self->append_pack("C", 0x07, );
     return;
 }
 

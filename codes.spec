@@ -26,6 +26,8 @@ prefix 0x1B
     set_right_margin                    1   0x51
     skip_lines                          1   0x61
     cut                                 0   0x64 0x33
+    barcode_ean13                       1   0x62 0x03 0x02 0x01
+    barcode_code128                     1   0x62 0x06 0x02 0x01
 end
 
 prefix 0x1B 0x1D
@@ -50,4 +52,6 @@ crlf                0   0x13 0x0A
 form_feed           0   0x0C
 vertical_tab        0   0x0B
 horizontal_tab      0   0x09
+data_end            0   0x1E
+bell                0   0x07
 
