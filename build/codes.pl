@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 # codes.pl - Generates the commands for bytes string
-# Copyright (c) 2010-2013 Peter Stuifzand
-# Copyright (c) 2010-2013 Other contributors as noted in the AUTHORS file
+# Copyright (c) 2013 Peter Stuifzand
+# Copyright (c) 2013 Other contributors as noted in the AUTHORS file
 # 
 # codes.pl is part of Protocol::Star::Linemode
 # 
