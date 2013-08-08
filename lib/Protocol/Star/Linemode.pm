@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 package Protocol::Star::Linemode;
 use strict;
-our $VERSION = '0.1.0';
+our $VERSION = '0.1.1';
 
 sub new {
     my ($class) = @_;
@@ -141,5 +141,31 @@ sub text {
 
 Protocol::Star::Linemode - Generates a formatted byte string for Star POS printers
 
-=cut
+=head1 SYNOPSIS
 
+  use Protocol::Star::Linemode::Generated;
+
+  my $p = Protocol::Star::Linemode::Generated->new;
+  $p->set_emphasized_printing;
+  $p->text("Hello world");
+  $p->cancel_emphasized_printing;
+
+  my $formatted_output = $p->result;
+  # Send $formatted_output to printer
+
+=head1 AUTHOR
+
+Peter Stuifzand E<lt>peter@stuifzand.euE<gt>
+
+=head1 COPYRIGHT
+
+Copyright 2013 - Peter Stuifzand
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+=cut

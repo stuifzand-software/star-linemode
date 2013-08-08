@@ -1,5 +1,0 @@
-lib/Protocol/Star/Linemode.pm
-lib/Protocol/Star/Linemode/Generated.pm
-t/generators.t
-build/codes.pl
-codes.spec
