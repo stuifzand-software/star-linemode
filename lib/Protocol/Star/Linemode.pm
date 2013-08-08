@@ -143,11 +143,15 @@ Protocol::Star::Linemode - Generates a formatted byte string for Star POS printe
 
 =head1 SYNOPSIS
 
-  use Web::Controller;
+  use Protocol::Star::Linemode::Generated;
 
-=head1 DESCRIPTION
+  my $p = Protocol::Star::Linemode::Generated->new;
+  $p->set_emphasized_printing;
+  $p->text("Hello world");
+  $p->cancel_emphasized_printing;
 
-Web::Controller is
+  my $formatted_output = $p->result;
+  # Send $formatted_output to printer
 
 =head1 AUTHOR
 
