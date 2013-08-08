@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 package Protocol::Star::Linemode;
 use strict;
-our $VERSION = '0.1.0';
+our $VERSION = '0.1.1';
 
 sub new {
     my ($class) = @_;
