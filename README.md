@@ -1,4 +1,3 @@
-star-linemode
-=============
+# NAME
 
-Small library that generates Star Line Mode Commands for POS printers
+Protocol::Star::Linemode - Generates a formatted byte string for Star POS printers

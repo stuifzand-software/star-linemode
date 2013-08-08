@@ -1,0 +1,40 @@
+{
+   "abstract" : "Generates a formatted byte string for Star POS printers",
+   "author" : [
+      "unknown"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "open_source"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Protocol-Star-Linemode",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.38"
+         }
+      }
+   },
+   "provides" : {
+      "Protocol::Star::Linemode" : {
+         "file" : "lib/Protocol/Star/Linemode.pm",
+         "version" : "v0.1.0"
+      },
+      "Protocol::Star::Linemode::Generated" : {
+         "file" : "lib/Protocol/Star/Linemode/Generated.pm",
+         "version" : 0
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://www.gnu.org/licenses/lgpl-3.0.txt"
+      ]
+   },
+   "version" : "v0.1.0"
+}
