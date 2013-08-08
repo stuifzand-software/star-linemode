@@ -141,5 +141,27 @@ sub text {
 
 Protocol::Star::Linemode - Generates a formatted byte string for Star POS printers
 
-=cut
+=head1 SYNOPSIS
 
+  use Web::Controller;
+
+=head1 DESCRIPTION
+
+Web::Controller is
+
+=head1 AUTHOR
+
+Peter Stuifzand E<lt>peter@stuifzand.euE<gt>
+
+=head1 COPYRIGHT
+
+Copyright 2013 - Peter Stuifzand
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+=cut
