@@ -16,6 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 package Protocol::Star::Linemode;
 use strict;
+our $VERSION = '0.1.1';
 
 sub new {
     my ($class) = @_;
@@ -69,64 +70,64 @@ sub create_escape_code {
     }
 }
 
-BEGIN {
-    no strict 'refs';
-    my @escape_specs = (
-        [ 'select_font',                            1, 0x1E, 0x46 ],
-        [ 'select_code_page',                       1, 0x1D, 0x74 ],
-        [ 'set_slash_zero',                         1, 0x27 ],
-        [ 'specify_international_character_set',    1, 0x52 ],
-        [ 'specify_12_dot_pitch',                   0, 0x4D ],
-        [ 'specify_15_dot_pitch',                   0, 0x50 ],
-        [ 'specify_16_dot_pitch',                   0, 0x3A ],
-        [ 'specify_14_dot_pitch',                   0, 0x67 ],
-        [ 'set_expanded_width_height',              2, 0x69 ],
-        [ 'set_expanded_width',                     1, 0x57 ],
-        [ 'set_expanded_height',                    1, 0x68 ],
-        [ 'set_double_high',                        0, 0x0E ],
-        [ 'cancel_double_high',                     0, 0x14 ],
-        [ 'set_emphazied_printing',                 0, 0x45 ],
-        [ 'cancel_emphazied_printing',              0, 0x46 ],
-        [ 'select_underline_mode',                  1, 0x2D ],
-        [ 'select_upperline_mode',                  1, 0x5F ],
-        [ 'select_inverse',                         0, 0x34 ],
-        [ 'cancel_inverse',                         0, 0x35 ],
-        [ 'feed_n_lines',                           1, 0x61 ],
-        [ 'set_page_length',                        1, 0x43 ],
-        [ 'set_page_length_in_24mm_units',          1, 0x43, 0x00 ],
-        [ 'set_left_margin',                        1, 0x6C, ],
-        [ 'set_right_margin',                       1, 0x51, ],
-        [ 'move_absolute_position',                 2, 0x1D, 0x41 ],
-        [ 'move_relative_position',                 2, 0x1D, 0x52 ],
-        [ 'specify_alignment',                      1, 0x1D, 0x61 ],
-        [ 'align_left',                             0, 0x1D, 0x61, 0x00 ],
-        [ 'align_center',                           0, 0x1D, 0x61, 0x01 ],
-        [ 'align_right',                            0, 0x1D, 0x61, 0x02 ],
-    );
-
-    my @specs = (
-        [ 'set_double_wide',                        1, 0x0E ],
-        [ 'cancel_double_wide',                     1, 0x14 ],
-        [ 'select_upside_down',                     0, 0x0F ],
-        [ 'cancel_upside_down',                     0, 0x12 ],
-        [ 'lf',                                     0, 0x0A ],
-        [ 'cr',                                     0, 0x13 ],
-        [ 'form_feed',                              0, 0x0C ],
-        [ 'vertical_tab',                           0, 0x0B ],
-        [ 'horizontal_tab',                         0, 0x09 ],
-    );
-
-    for my $spec (@escape_specs) {
-        my $name = shift @$spec;
-        my $nargs = shift @$spec;
-        *{$name} = create_escape_code($nargs, @$spec);
-    }
-    for my $spec (@specs) {
-        my $name = shift @$spec;
-        my $nargs = shift @$spec;
-        *{$name} = create_normal_code($nargs, @$spec);
-    }
-}
+#BEGIN {
+#    no strict 'refs';
+#    my @escape_specs = (
+#        [ 'select_font',                            1, 0x1E, 0x46 ],
+#        [ 'select_code_page',                       1, 0x1D, 0x74 ],
+#        [ 'set_slash_zero',                         1, 0x27 ],
+#        [ 'specify_international_character_set',    1, 0x52 ],
+#        [ 'specify_12_dot_pitch',                   0, 0x4D ],
+#        [ 'specify_15_dot_pitch',                   0, 0x50 ],
+#        [ 'specify_16_dot_pitch',                   0, 0x3A ],
+#        [ 'specify_14_dot_pitch',                   0, 0x67 ],
+#        [ 'set_expanded_width_height',              2, 0x69 ],
+#        [ 'set_expanded_width',                     1, 0x57 ],
+#        [ 'set_expanded_height',                    1, 0x68 ],
+#        [ 'set_double_high',                        0, 0x0E ],
+#        [ 'cancel_double_high',                     0, 0x14 ],
+#        [ 'set_emphazied_printing',                 0, 0x45 ],
+#        [ 'cancel_emphazied_printing',              0, 0x46 ],
+#        [ 'select_underline_mode',                  1, 0x2D ],
+#        [ 'select_upperline_mode',                  1, 0x5F ],
+#        [ 'select_inverse',                         0, 0x34 ],
+#        [ 'cancel_inverse',                         0, 0x35 ],
+#        [ 'feed_n_lines',                           1, 0x61 ],
+#        [ 'set_page_length',                        1, 0x43 ],
+#        [ 'set_page_length_in_24mm_units',          1, 0x43, 0x00 ],
+#        [ 'set_left_margin',                        1, 0x6C, ],
+#        [ 'set_right_margin',                       1, 0x51, ],
+#        [ 'move_absolute_position',                 2, 0x1D, 0x41 ],
+#        [ 'move_relative_position',                 2, 0x1D, 0x52 ],
+#        [ 'specify_alignment',                      1, 0x1D, 0x61 ],
+#        [ 'align_left',                             0, 0x1D, 0x61, 0x00 ],
+#        [ 'align_center',                           0, 0x1D, 0x61, 0x01 ],
+#        [ 'align_right',                            0, 0x1D, 0x61, 0x02 ],
+#    );
+#
+#    my @specs = (
+#        [ 'set_double_wide',                        1, 0x0E ],
+#        [ 'cancel_double_wide',                     1, 0x14 ],
+#        [ 'select_upside_down',                     0, 0x0F ],
+#        [ 'cancel_upside_down',                     0, 0x12 ],
+#        [ 'lf',                                     0, 0x0A ],
+#        [ 'cr',                                     0, 0x13 ],
+#        [ 'form_feed',                              0, 0x0C ],
+#        [ 'vertical_tab',                           0, 0x0B ],
+#        [ 'horizontal_tab',                         0, 0x09 ],
+#    );
+#
+#    for my $spec (@escape_specs) {
+#        my $name = shift @$spec;
+#        my $nargs = shift @$spec;
+#        *{$name} = create_escape_code($nargs, @$spec);
+#    }
+#    for my $spec (@specs) {
+#        my $name = shift @$spec;
+#        my $nargs = shift @$spec;
+#        *{$name} = create_normal_code($nargs, @$spec);
+#    }
+#}
 
 sub text {
     my ($self, $text) = @_;
@@ -140,5 +141,31 @@ sub text {
 
 Protocol::Star::Linemode - Generates a formatted byte string for Star POS printers
 
-=cut
+=head1 SYNOPSIS
 
+  use Protocol::Star::Linemode::Generated;
+
+  my $p = Protocol::Star::Linemode::Generated->new;
+  $p->set_emphasized_printing;
+  $p->text("Hello world");
+  $p->cancel_emphasized_printing;
+
+  my $formatted_output = $p->result;
+  # Send $formatted_output to printer
+
+=head1 AUTHOR
+
+Peter Stuifzand E<lt>peter@stuifzand.euE<gt>
+
+=head1 COPYRIGHT
+
+Copyright 2013 - Peter Stuifzand
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+=cut
