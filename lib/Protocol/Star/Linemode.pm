@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package Protocol::Star::Linemode;
-our $VERSION = '0.1.2';
+our $VERSION = '1.0.0';
 use Moo;
 with qw/
 Protocol::Star::Linemode::Generated
