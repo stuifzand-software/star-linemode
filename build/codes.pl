@@ -96,8 +96,7 @@ print "# You should have received a copy of the GNU Lesser General Public Licens
 print "# along with this program. If not, see <http://www.gnu.org/licenses/>.\n";
 
 print "package Protocol::Star::Linemode::Generated;\n";
-print "use strict;\n\n";
-print 'use parent "Protocol::Star::Linemode";'."\n";
+print "use Moo::Role;\n";
 
 for my $rule (@rules) {
     my $name   = $rule->{name};

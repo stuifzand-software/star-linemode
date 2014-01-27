@@ -17,9 +17,7 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 package Protocol::Star::Linemode::Generated;
-use strict;
-
-use parent "Protocol::Star::Linemode";
+use Moo::Role;
 sub command_initialization {
     my ($self, ) = @_;
     $self->append_pack("CC", 0x1B, 0x40, );

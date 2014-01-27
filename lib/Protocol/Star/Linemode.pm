@@ -14,24 +14,28 @@
 # 
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
-package Protocol::Star::Linemode;
-use strict;
-our $VERSION = '0.1.2';
 
-sub new {
-    my ($class) = @_;
-    return bless { _data => '' }, $class;
-}
+package Protocol::Star::Linemode;
+our $VERSION = '0.1.2';
+use Moo;
+with qw/
+Protocol::Star::Linemode::Generated
+/;
+
+has _data => (
+    is      => 'rw',
+    default => sub { '' },
+);
 
 sub append {
     my ($self, @data) = @_;
-    $self->{_data} .= join '', @data;
+    $self->_data($self->_data . (join '', @data));
     return;
 }
 
 sub result {
     my $self = shift;
-    return $self->{_data};
+    return $self->_data;
 }
 
 sub append_pack {
@@ -143,15 +147,23 @@ Protocol::Star::Linemode - Generates a formatted byte string for Star POS printe
 
 =head1 SYNOPSIS
 
-  use Protocol::Star::Linemode::Generated;
+  use Protocol::Star::Linemode;
 
-  my $p = Protocol::Star::Linemode::Generated->new;
+  my $p = Protocol::Star::Linemode->new;
   $p->set_emphasized_printing;
   $p->text("Hello world");
   $p->cancel_emphasized_printing;
 
   my $formatted_output = $p->result;
   # Send $formatted_output to printer
+
+=head1 Converting from 0.1.2 to 1.0.0
+
+=over 4
+
+=item * Create a L<Protocol::Star::Linemode> object instead of the L<Protocol::Star::Linemode::Generated> object
+
+=back
 
 =head1 AUTHOR
 
