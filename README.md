@@ -4,9 +4,9 @@ Protocol::Star::Linemode - Generates a formatted byte string for Star POS printe
 
 # SYNOPSIS
 
-    use Protocol::Star::Linemode::Generated;
+    use Protocol::Star::Linemode;
 
-    my $p = Protocol::Star::Linemode::Generated->new;
+    my $p = Protocol::Star::Linemode->new;
     $p->set_emphasized_printing;
     $p->text("Hello world");
     $p->cancel_emphasized_printing;

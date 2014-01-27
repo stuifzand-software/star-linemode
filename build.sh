@@ -1,2 +1,2 @@
 #!/bin/sh
-perl build/codes.pl > lib/Protocol/Star/Linemode/Generated.pm
+perl build/codes.pl > lib/Protocol/Star/Linemode/GeneratedRole.pm
