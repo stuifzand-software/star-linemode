@@ -1,6 +1,6 @@
 # Protocol::Star::Linemode - Generates a formatted byte string for Star POS printers
-# Copyright (c) 2010-2013 Peter Stuifzand
-# Copyright (c) 2010-2013 Other contributors as noted in the AUTHORS file
+# Copyright (c) 2013 Peter Stuifzand
+# Copyright (c) 2013 Other contributors as noted in the AUTHORS file
 # 
 # Protocol::Star::Linemode is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public License as
