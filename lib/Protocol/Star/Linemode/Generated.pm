@@ -18,7 +18,6 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 package Protocol::Star::Linemode::Generated;
 use Moo::Role;
-
 sub command_initialization {
     my ($self, ) = @_;
     $self->append_pack("CC", 0x1B, 0x40, );
