@@ -14,6 +14,10 @@ Protocol::Star::Linemode - Generates a formatted byte string for Star POS printe
     my $formatted_output = $p->result;
     # Send $formatted_output to printer
 
+# Converting from 0.1.2 to 1.0.0
+
+- Create a [Protocol::Star::Linemode](http://search.cpan.org/perldoc?Protocol::Star::Linemode) object instead of the [Protocol::Star::Linemode::Generated](http://search.cpan.org/perldoc?Protocol::Star::Linemode::Generated) object
+
 # AUTHOR
 
 Peter Stuifzand <peter@stuifzand.eu>
